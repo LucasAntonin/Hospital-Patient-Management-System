@@ -8,54 +8,64 @@
                         <input type="text"
                                v-model="form.name"
                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                               placeholder=" " required/>
+                               placeholder=" "/>
                         <label
                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                             Nome Completo
                         </label>
-                        <div v-if="form.errors.name"
-                             class="p-4 mt-2 text-xs text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-                             role="alert">
+                        <ErrorMessage v-if="form.errors.name">
                             {{ form.errors.name }}
-                        </div>
+                        </ErrorMessage>
                     </div>
                     <div class="relative z-0 w-full mb-6 group">
                         <input type="text"
                                v-model="form.mother_name"
                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                               placeholder=" " required/>
+                               placeholder=" "/>
                         <label
                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nome
                             Completo da Mãe</label>
+                        <ErrorMessage v-if="form.errors.mother_name">
+                            {{ form.errors.mother_name }}
+                        </ErrorMessage>
                     </div>
 
                     <div class="relative z-0 w-full mb-6 group">
                         <input type="text"
                                v-model="form.date_of_birth"
                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                               placeholder=" " required/>
+                               placeholder=" "/>
                         <label
                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Data
                             de Nascimento</label>
+                        <ErrorMessage v-if="form.errors.date_of_birth">
+                            {{ form.errors.date_of_birth }}
+                        </ErrorMessage>
                     </div>
 
                     <div class="relative z-0 w-full mb-6 group">
                         <input type="text"
                                v-model="form.cpf"
                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                               placeholder=" " required/>
+                               placeholder=" "/>
                         <label
                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">CPF</label>
+                        <ErrorMessage v-if="form.errors.cpf">
+                            {{ form.errors.cpf }}
+                        </ErrorMessage>
                     </div>
                     <div class="relative z-0 w-full mb-6 group">
                         <input type="text"
                                v-model="form.cns"
                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                               placeholder=" " required/>
+                               placeholder=" "/>
                         <label
                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                             CNS
                         </label>
+                        <ErrorMessage v-if="form.errors.cns">
+                            {{ form.errors.cns }}
+                        </ErrorMessage>
                     </div>
                     <div class="relative z-0 w-full mb-6 group">
                         <input type="text"
@@ -124,6 +134,7 @@
 
 <script setup>
 import {useForm} from '@inertiajs/vue3'
+import ErrorMessage from "../../Components/ErrorMessage.vue";
 
 const form = useForm({
     name: null,

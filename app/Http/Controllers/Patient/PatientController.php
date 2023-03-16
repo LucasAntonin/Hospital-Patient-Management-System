@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Patient;
 
 use App\Actions\Patient\CreatePatientAction;
 use App\Actions\Patient\ListPatientAction;
+use App\Data\CreatePatientRequestData;
 use App\Http\Controllers\Controller;
 use App\Models\Patient;
 use Illuminate\Http\Request;
@@ -32,9 +33,9 @@ class PatientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreatePatientAction $action)
+    public function store(CreatePatientRequestData $requestData, CreatePatientAction $action)
     {
-        $action->execute();
+        $action->execute($requestData);
 
         return redirect()->route('index')
             ->with('success', 'Paciente foi registrado!');

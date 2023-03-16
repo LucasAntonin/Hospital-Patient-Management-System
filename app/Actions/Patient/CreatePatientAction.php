@@ -2,21 +2,15 @@
 
 namespace App\Actions\Patient;
 
+use App\Data\CreatePatientRequestData;
 use App\Models\Patient;
-use Illuminate\Http\Request;
 
 class CreatePatientAction
 {
-    public function execute(Request $request)
+    public function execute(CreatePatientRequestData $requestData)
     {
         return Patient::create(
-            $request->validate([
-                'name' => 'required|min:2|max:40',
-                'mother_name' => 'required|min:2|max:40',
-                'date_of_birth' => 'required',
-                'cpf' => 'required',
-                'cns' => 'required',
-            ])
+            $requestData->toArray()
         );
     }
 }
