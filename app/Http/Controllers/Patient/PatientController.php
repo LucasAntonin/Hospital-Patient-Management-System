@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Patient;
 
 use App\Actions\Patient\CreatePatientAction;
+use App\Actions\Patient\DeletePatientAction;
 use App\Actions\Patient\ListPatientAction;
 use App\Data\CreatePatientRequestData;
 use App\Http\Controllers\Controller;
-use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
@@ -68,8 +68,8 @@ class PatientController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(DeletePatientAction $action)
     {
-        //
+        return $action->execute();
     }
 }
