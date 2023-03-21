@@ -47,6 +47,6 @@ import {Link} from "@inertiajs/vue3";
 import SearchBar from "../../Components/SearchBar.vue";
 
 defineProps({
-    patients: Array
+    patients: Array,
 })
 </script>

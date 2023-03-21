@@ -5,6 +5,7 @@ namespace App\Actions\Patient;
 use App\Data\CreatePatientRequestData;
 use App\Models\Address;
 use App\Models\Patient;
+use Illuminate\Support\Facades\Cache;
 
 class CreatePatientAction
 {
@@ -28,6 +29,8 @@ class CreatePatientAction
             'cidade' => $requestData->cidade,
             'patient_id' => $patient->id,
         ]);
+
+        Cache::forget('patients');
 
         return CreatePatientRequestData::validate([
             'name' => $requestData->name,

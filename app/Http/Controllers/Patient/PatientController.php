@@ -49,7 +49,12 @@ class PatientController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $patient = Patient::with('address')->findOrFail($id);
+
+        return inertia('Patients/Show', [
+            'patient' => $patient,
+            'address' => $patient->address,
+        ]);
     }
 
     /**
