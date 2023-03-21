@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Address;
 use App\Models\Patient;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Patient::factory(8)->create();
+        Patient::factory()
+            ->count(5)
+            ->has(Address::factory())
+            ->create();
     }
 }

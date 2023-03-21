@@ -13,7 +13,7 @@ return new class extends Migration {
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Address::class);
+            $table->foreignIdFor(Address::class)->nullable();
             $table->string('name');
             $table->string('mother_name');
             $table->string('date_of_birth');

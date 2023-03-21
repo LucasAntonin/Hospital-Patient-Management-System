@@ -29,13 +29,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <PatientListing v-for="patient in patients" :key="patient.id" :patient="patient"/>
+                    <PatientListing v-if="patients.length" v-for="patient in patients" :key="patient.id" :patient="patient"/>
                 </tbody>
             </table>
         </div>
         <Link
             class="mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-            href="/create" as="button">
+            href="/patients/create" as="button">
             Registrar Paciente
         </Link>
     </div>

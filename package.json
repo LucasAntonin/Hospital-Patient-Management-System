@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@inertiajs/vue3": "^1.0.2",
-        "v-mask": "^2.3.0"
+        "v-mask": "^2.3.0",
+        "vue-the-mask": "^0.11.1"
     }
 }

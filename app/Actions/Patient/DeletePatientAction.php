@@ -9,6 +9,7 @@ class DeletePatientAction
 {
     public function execute(Patient $patient)
     {
-        return $patient->delete();
+        $patient->delete();
+        return true;
     }
 }

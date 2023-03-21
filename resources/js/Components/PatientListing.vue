@@ -16,10 +16,13 @@
             {{ patient.cns }}
         </td>
         <td class="px-6 py-4 text-right">
-            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+            <Link :href="`/patients/${patient.id}/edit`"
+                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                Edit
+            </Link>
         </td>
         <td class="px-6 py-4">
-            <Link :href="`/${patient.id}`" method="DELETE"
+            <Link :href="`/patients/${patient.id}`" method="DELETE"
                   class="font-medium text-red-600 dark:text-red-500 hover:underline">
                 Deletar
             </Link>

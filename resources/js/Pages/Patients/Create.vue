@@ -179,7 +179,7 @@ const form = useForm({
     cidade: null,
 })
 
-const create = () => form.post('/');
+const create = () => form.post('/patients/');
 </script>
 
 <style scoped>

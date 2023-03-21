@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/', PatientController::class);
+Route::resource('patients', PatientController::class);
