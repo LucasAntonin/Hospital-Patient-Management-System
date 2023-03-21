@@ -4,6 +4,9 @@ This project is a Hospital Patient Management System. Here are the instructions 
 
 If the project folder comes as "Hospital-Patient-Management-System-main", change it to "Hospital-Patient-Management-System".
 
+Install Kool.dev
+curl -fsSL https://kool.dev/install | bash
+
 Run the following command:
 kool run setup
 
