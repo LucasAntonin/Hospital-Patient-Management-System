@@ -1,4 +1,4 @@
-Hospital Patient Management System
+# Hospital Patient Management System
 
 This project is a Hospital Patient Management System. Here are the instructions to run the project:
 
